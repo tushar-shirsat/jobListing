@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { addAllJobs } from "../../../actions/jobs";
 import FilterJobs from "../../../components/FilterJobs";
 import Loading from "../../../components/Loading";
+import Head from 'next/head'
 
 //dynamic import JobList list component 
 const JobList = dynamic(
@@ -19,7 +20,9 @@ const Jobs = ({data}) => {
   },[])
   return (
     <div className="main-job-container">
-      
+      <Head>
+          <title>Job-Listing -Jobs</title>
+      </Head>
       <FilterJobs/>
       <section className="job-container">
         <h2 style={{marginBottom: "20px", color: "#333", fontSize: "20px"}}>Developer Jobs</h2>
